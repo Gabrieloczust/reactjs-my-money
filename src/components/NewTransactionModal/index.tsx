@@ -1,8 +1,9 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import ReactModal from "react-modal";
 import closeImg from "../../assets/close.svg";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
+import { api } from "../../services/api";
 import { Form, Close, TransactionTypeContainer, RadioBox } from "./styles";
 
 type NewTransactionModalProps = {
@@ -20,6 +21,19 @@ export function NewTransactionModal(props: NewTransactionModalProps) {
 
   function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
+
+    const data = {
+      title,
+      value,
+      type,
+      category,
+    };
+
+    api.post("/transactions", data);
+
+    setTitle("");
+    setValue(0);
+    setCategory("");
   }
 
   function handleSetTypeDeposit() {
@@ -60,6 +74,7 @@ export function NewTransactionModal(props: NewTransactionModalProps) {
         <input
           type="text"
           placeholder="Título"
+          required
           autoFocus
           value={title}
           onChange={(event) => setTitle(event.target.value)}
@@ -68,6 +83,7 @@ export function NewTransactionModal(props: NewTransactionModalProps) {
         <input
           type="number"
           placeholder="Valor"
+          required
           min="0"
           value={value}
           onChange={(event) => setValue(Number(event.target.value))}
@@ -102,6 +118,7 @@ export function NewTransactionModal(props: NewTransactionModalProps) {
         <input
           type="text"
           placeholder="Categoria"
+          required
           value={category}
           onChange={(event) => setCategory(event.target.value)}
         />
