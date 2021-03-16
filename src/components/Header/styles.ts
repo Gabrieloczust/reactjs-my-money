@@ -5,7 +5,7 @@ export const Container = styled.header`
 `;
 
 export const Content = styled.div`
-  max-width: 1120px;
+  max-width: var(--container);
   margin: 0 auto;
 
   padding: 2rem 1rem 12rem;
@@ -20,7 +20,7 @@ export const Content = styled.div`
     background-color: var(--blue-light);
     border: 0;
     padding: 0 2rem;
-    border-radius: 0.25rem;
+    border-radius:  var(--border-radius);
     height: 3rem;
 
     transition: filter 0.2s;
