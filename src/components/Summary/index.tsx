@@ -1,4 +1,5 @@
 import { useTransactions } from "../../contexts/Transactions";
+import { formatCurrency } from "../../utils/formart";
 
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
@@ -16,21 +17,21 @@ export function Summary() {
           <p>Entradas</p>
           <img src={incomeImg} alt="Entradas" />
         </header>
-        <strong>R$ {incomes}</strong>
+        <strong>{formatCurrency(incomes)}</strong>
       </div>
       <div>
         <header>
           <p>Saídas</p>
           <img src={outcomeImg} alt="Saídas" />
         </header>
-        <strong>R$ {outcomes}</strong>
+        <strong>{formatCurrency(outcomes)}</strong>
       </div>
       <div className="highlight-background">
         <header>
           <p>Total</p>
           <img src={totalImg} alt="Total" />
         </header>
-        <strong>R$ {incomes - outcomes}</strong>
+        <strong>{formatCurrency(incomes - outcomes)}</strong>
       </div>
     </Container>
   );
