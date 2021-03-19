@@ -1,7 +1,10 @@
 import { createServer, Model } from "miragejs";
 import axios from "axios";
 
-export const baseURL = "http://localhost:3000/api";
+export const baseURL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000/api"
+    : "https://react-my-money.vercel.app/api";
 
 export const api = axios.create({
   baseURL,
