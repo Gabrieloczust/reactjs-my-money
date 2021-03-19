@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-top: 4rem;
+  margin-top: 3rem;
+  overflow-x: auto;
+
+  @media (max-width: 720px) {
+    margin-top: 2rem;
+  }
 
   table {
     width: 100%;

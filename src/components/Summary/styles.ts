@@ -9,7 +9,7 @@ export const Container = styled.header`
   div {
     background: var(--shape);
     padding: 1.5rem 2rem;
-    border-radius:  var(--border-radius);
+    border-radius: var(--border-radius);
     color: var(--text-title);
 
     header {
@@ -30,5 +30,12 @@ export const Container = styled.header`
       background: var(--green);
       color: var(--shape);
     }
+  }
+
+  @media (max-width: 720px) {
+    margin-top: 0;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1rem;
   }
 `;

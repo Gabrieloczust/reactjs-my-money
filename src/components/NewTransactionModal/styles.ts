@@ -26,6 +26,10 @@ export const Form = styled.form`
     color: var(--text-title);
     font-size: 1.5rem;
     margin-bottom: 2rem;
+
+    @media (max-width: 720px) {
+      font-size: 1.2rem;
+    }
   }
 
   input {
@@ -47,6 +51,10 @@ export const Form = styled.form`
     & + input {
       margin-top: 1rem;
     }
+
+    @media (max-width: 720px) {
+      height: 3rem;
+    }
   }
 
   button[type="submit"] {
@@ -65,6 +73,11 @@ export const Form = styled.form`
 
     &:hover {
       filter: brightness(0.9);
+    }
+
+    @media (max-width: 720px) {
+      height: 3rem;
+      font-size: 0.8rem;
     }
   }
 `;
@@ -109,5 +122,9 @@ export const RadioBox = styled.button<RadioBoxProps>`
     margin-left: 0.5rem;
     font-size: 1rem;
     color: var(--text-title);
+  }
+
+  @media (max-width: 720px) {
+    height: 3rem;
   }
 `;

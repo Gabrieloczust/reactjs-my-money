@@ -20,13 +20,22 @@ export const Content = styled.div`
     background-color: var(--blue-light);
     border: 0;
     padding: 0 2rem;
-    border-radius:  var(--border-radius);
+    border-radius: var(--border-radius);
     height: 3rem;
 
     transition: filter 0.2s;
 
     &:hover {
       filter: brightness(0.9);
+    }
+  }
+
+  @media (max-width: 720px) {
+    padding: 2rem 1rem;
+    flex-direction: column;
+
+    button {
+      margin-top: 2rem;
     }
   }
 `;

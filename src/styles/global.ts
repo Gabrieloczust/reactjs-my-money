@@ -80,5 +80,11 @@ export const GlobalStyle = createGlobalStyle`
       padding: 3rem;
       position: relative;
       border-radius: var(--border-radius);
+
+      @media (max-width: 720px) {
+        border-radius: 0;
+        height: 100%;
+        padding: 1rem;
+      }
     }
 `;
