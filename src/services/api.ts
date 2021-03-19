@@ -16,8 +16,8 @@ export const server = createServer({
       transactions: [
         {
           id: 1,
-          title: "Site",
-          value: 1000,
+          title: "Landing Page",
+          value: 4000,
           type: "deposit",
           category: "Trabalho",
           createdAt: new Date(),
@@ -25,7 +25,7 @@ export const server = createServer({
         {
           id: 2,
           title: "Internet",
-          value: 130,
+          value: 139,
           type: "withdraw",
           category: "Custo Fixo",
           createdAt: new Date(),
