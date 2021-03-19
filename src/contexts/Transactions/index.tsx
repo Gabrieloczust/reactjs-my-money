@@ -16,12 +16,6 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [incomes, setIncomes] = useState(0);
   const [outcomes, setOutcomes] = useState(0);
 
-  function totalType(type: string) {
-    return transactions
-      .filter((transaction) => transaction.type === type)
-      .reduce((total, transaction) => (total += transaction.value), 0);
-  }
-
   async function createTransaction(transaction: TransactionInputProps) {
     const { data } = await api.post("/transactions", transaction);
 
@@ -35,6 +29,12 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
   }, []);
 
   useEffect(() => {
+    function totalType(type: string) {
+      return transactions
+        .filter((transaction) => transaction.type === type)
+        .reduce((total, transaction) => (total += transaction.value), 0);
+    }
+
     setIncomes(totalType("deposit"));
     setOutcomes(totalType("withdraw"));
   }, [transactions]);
